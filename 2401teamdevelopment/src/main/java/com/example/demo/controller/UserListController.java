@@ -27,7 +27,7 @@ public class UserListController {
    * ユーザー情報 Service
    */
   @Autowired
-  UserListService UserListService;
+  UserListService userlistService;
 
 
   /**
@@ -37,7 +37,7 @@ public class UserListController {
    */
   @GetMapping(value="/user/userList")
   public String userList(Model model) {
-    List<UserListEntity> userList = UserListService.searchAll();
+    List<UserListEntity> userList = userlistService.searchAll();
     model.addAttribute("userList", userList);
     return "user/userList";
   }

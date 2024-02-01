@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-
-<head th:replace="common/head :: head_fragment(title = 'ユーザー一覧', scripts = ~{::script}, links = ~{::link})">
   <link th:href="@{/css/userList.css}" rel="stylesheet">
-</head>
 
 <body>
   <header>
-    <img src="img/yib.png" width="1400px" height="150px" alt="">
+    <img th:src="@{/img/yib.png}" width="1400px" height="150px" alt="">
   </header>
 
   <div class="contents">
@@ -24,11 +21,11 @@
 
       <tbody>
         <tr th:each="user : ${userList}" th:object="${user}" class="align-middle">
-          <td class="*{user_id}"></td>
-          <td class="*{name}"></td>
-          <td class="*{furigana}"></td>
-          <td class="*{mail}"></td>
-          <td class="*{password}"></td>
+          <td th:text="*{user_id}"></td>
+          <td th:text="*{name}"></td>
+          <td th:text="*{furigana}"></td>
+          <td th:text="*{mail}"></td>
+          <td th:text="*{password}"></td>
           <td id="not_background-color" class="button"><a href="userEditDelete" class="btn-text">編集</a>
           </td>
         </tr>
