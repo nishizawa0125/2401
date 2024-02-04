@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,8 +14,15 @@ import lombok.Data;
  */
 @Entity
 @Data
-@Table(name = "expense_tb")
+@Table(name = "expense_tb",schema="public")
 public class expenseRegisterEntity implements Serializable {
+  /**
+   * 経費ID
+   */
+  @Id
+  @Column(name = "expense_id")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long expense_id;
   /**
    * ユーザーID
    */
@@ -43,5 +49,7 @@ public class expenseRegisterEntity implements Serializable {
    * 備考
    */
   @Column(name = "remarks")
-  private Date updateDate;
+  private String remarks;
+  
+
 }
