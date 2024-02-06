@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -27,8 +28,8 @@ public class expenseRegisterEntity implements Serializable {
    * ユーザーID
    */
   @Id
-  @Column(name = "user_id")
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  
+  @JoinColumn(name = "user_id")
   private Long user_id;
   /**
    * 申請日

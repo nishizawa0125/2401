@@ -24,7 +24,7 @@ public class expenseRegisterService {
    * ユーザー情報 全検索
    * @return 検索結果
    */
-  public static List<expenseRegisterEntity> searchAll() {
+  public List<expenseRegisterEntity> searchAll() {
     return expenseRegisterRepository.findAll();
   }
   
@@ -36,7 +36,7 @@ public class expenseRegisterService {
   public static void create(expenseRegisterRequest expenseRegisterRequest) {
     Date now = new Date();
     expenseRegisterEntity user = new expenseRegisterEntity();
-    
+    user.setExpense_id(expenseRegisterRequest.getExpense_id());
     user.setUser_id(expenseRegisterRequest.getUser_id());
     user.setApplication_date(expenseRegisterRequest.getApplication_date());
     user.setCategory(expenseRegisterRequest.getCategory());
@@ -45,8 +45,5 @@ public class expenseRegisterService {
     
     expenseRegisterRepository.save(user);
   }
-public expenseRegisterEntity findById(Long id) {
-	// TODO 自動生成されたメソッド・スタブ
-	return null;
-}
+
 }
