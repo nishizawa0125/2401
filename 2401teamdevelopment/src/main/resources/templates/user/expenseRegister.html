@@ -10,16 +10,16 @@
    
     <form th:action="@{/expenseRegister/create}" th:object="${expenseRegisterRequest}" th:method="post">
   <div class="contents">
-         <div th:if="${validationError}" th:each="error : ${validationError}">
-            <label class="text-danger" th:text="${error}"></label>   
-         </div>
+    <div th:if="${validationError}" th:each="error : ${validationError}">
+      <label class="text-danger" th:text="${error}"></label>   
+    </div>
     <div class="gyou">
       <p class="ksmaru">⚫️</p>
       <p>経費ID</p>
       <input class="text" placeholder="経費IDは自動で採番致します" readonly>
     </div>
 
-      <div class="gyou">
+    <div class="gyou">
       <p class="ksmaru">⚫️</p>
       <p>ユーザーID</p>
       <input class="box">
@@ -34,7 +34,7 @@
       </dd>
     </div>
 
-<div class="gyou">
+    <div class="gyou">
       <p class="ksmaru">⚫️</p>
       <p>経費項目</p>
       <input class="box">

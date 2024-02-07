@@ -5,7 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
@@ -16,19 +16,17 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name = "expense_tb",schema="public")
+@IdClass(value=expenseRegisterKey.class)
 public class expenseRegisterEntity implements Serializable {
   /**
    * 経費ID
    */
-  @Id
   @Column(name = "expense_id")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long expense_id;
   /**
    * ユーザーID
-   */
-  @Id
-  
+   */  
   @JoinColumn(name = "user_id")
   private Long user_id;
   /**
