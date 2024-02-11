@@ -30,10 +30,10 @@ public class expenseRegisterController {
    * @param model Model
    * @return (マイページ)ユーザー情報一覧画面
    */
-  @GetMapping("expenseRegister")
+  @GetMapping(value="user/expenseRegister")
   public String expenseRegisterRegister(Model model) {
     model.addAttribute("expenseRegisterRequest", new expenseRegisterRequest());
-    return "expenseRegister";
+    return "user/expenseRegister";
   }
   /**
    * (経費申請登録)ユーザー新規登録

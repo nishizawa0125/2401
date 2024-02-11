@@ -16,13 +16,13 @@ public class expenseRegisterRequest implements Serializable {
    * 経費ID
    */
   @NotEmpty(message = "経費IDを入力してください")
-  @Size
+  
   private Long expense_id;
   /**
    * ユーザーID
    */
   @NotEmpty(message = "ユーザーIDを入力してください")
-  @Size
+  
   private Long user_id;
   /**
    * 申請日
@@ -34,13 +34,13 @@ public class expenseRegisterRequest implements Serializable {
    * 経費項目
    */
   @NotEmpty(message = "経費項目を入力してください")
-  @Size
+  
   private String category;
   /**
    * 金額
    */
   @NotEmpty(message = "金額を入力してください")
-  @Size
+  
   private String amount;
   /**
    * 備考

@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-  <link th:href="@{/css/expenseRegister.css}" rel="stylesheet">
+<html xmlns="http://www.w3.org/1999/xhtml
+"xmlns:th="http://www.thymeleaf.org">
+  <link th:href="@{css/expenseRegister.css}" rel="stylesheet">
   
-  <head>
+  <head
+  th:replace="common/head :: head_fragment(title = '経費申請', scripts = ~{::script}, links = ~{::link})"></head>
 	  <meta charset="UTF-8">
   </head>
 <body>
@@ -22,7 +24,8 @@
     <div class="gyou">
       <p class="ksmaru">⚫️</p>
       <p>ユーザーID</p>
-      <input class="box">
+      <div class="box">
+      <input type="text" th:field="*{user_id}">
     </div>
 
     <div class="gyou">
