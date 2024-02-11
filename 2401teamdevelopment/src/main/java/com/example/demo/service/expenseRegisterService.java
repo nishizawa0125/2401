@@ -33,7 +33,7 @@ public class expenseRegisterService {
    * ユーザー情報 新規登録
    * @param user ユーザー情報
    */
-  public static void create(expenseRegisterRequest expenseRegisterRequest) {
+  public void create(expenseRegisterRequest expenseRegisterRequest) {
     Date now = new Date();
     expenseRegisterEntity user = new expenseRegisterEntity();
     user.setExpense_id(expenseRegisterRequest.getExpense_id());

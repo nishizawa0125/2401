@@ -31,7 +31,7 @@ public class expenseRegisterController {
    * @return (マイページ)ユーザー情報一覧画面
    */
   @GetMapping(value="user/expenseRegister")
-  public String expenseRegisterRegister(Model model) {
+  public String displayAdd(Model model) {
     model.addAttribute("expenseRegisterRequest", new expenseRegisterRequest());
     return "user/expenseRegister";
   }
@@ -39,7 +39,7 @@ public class expenseRegisterController {
    * (経費申請登録)ユーザー新規登録
    * @param userRequest リクエストデータ
    * @param model Model
-   * @return ユーザー情報一覧画面
+   * @return ユーザー情報一覧
    */
   @PostMapping("/expenseRegister/create")
   public String Create(@Validated @ModelAttribute expenseRegisterRequest expenseRegisterRequest, BindingResult result, Model model) {
@@ -50,7 +50,7 @@ public class expenseRegisterController {
         errorList.add(error.getDefaultMessage());
       }
       model.addAttribute("validationError", errorList);
-      return "expenseRegister";
+      return "user/expenseRegister";
     }
     // 経費申請情報の登録
     expenseRegisterService.create(expenseRegisterRequest);
