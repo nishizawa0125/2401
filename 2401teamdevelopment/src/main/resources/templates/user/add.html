@@ -1,57 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
   xmlns:th="http://www.thymeleaf.org">
-<head
-  th:replace="user/add :: head_fragment(title = 'ユーザー新規登録', scripts = ~{::script}, links = ~{::link})"></head>
-
+<head th:replace="common/head :: head_fragment(title = '画面ダミー', scripts = ~{::script}, links = ~{::link})"></head>
 <body>
-  <div class="contents">
-    <div th:if="${validationError}" th:each="error : ${validationError}">
-      <label class="text-danger" th:text="${error}"></label>
-    </div>
-    <h1>?</h1>
-    <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
-
- <div class="form-group">
-        <label>経費ID：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{expense_ib}" class="form-control">
-      </div>
-
-
-      <div class="form-group">
-        <label>ユーザーID：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{user_id}" class="form-control">
-      </div>
-
-
-      <div class="form-group">
-        <label>申請日：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{application_date}" class="form-control">
-      </div>
-
-
-      <div class="form-group">
-        <label>経費項目：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{category}" class="form-control">
-      </div>
-      
-      
-      <div class="form-group">
-        <label>金額：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{amount}" class="form-control">
-      </div>
-      
-      
-      <div class="form-group">
-        <label>備考：<span class="text-danger">※</span></label>
-        <input type="text" th:field="*{remarks}" class="form-control">
-      </div>
-      <br />
-      <div class="text-center">
-        <a href="/user/list" class="btn btn-secondary">キャンセル</a>
-        <input type="submit" value="　登録　" class="btn btn-primary">
-      </div>
-    </form>
+  <div class="container">
+    <h1>画面ダミー</h1>
+    <a href="/user/expenseRegister">戻る</a>
   </div>
 </body>
 </html>

@@ -1,5 +1,4 @@
 package com.example.demo.service;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,16 +33,15 @@ public class expenseRegisterService {
    * @param user ユーザー情報
    */
   public void create(expenseRegisterRequest expenseRegisterRequest) {
-    Date now = new Date();
-    expenseRegisterEntity user = new expenseRegisterEntity();
-    user.setExpense_id(expenseRegisterRequest.getExpense_id());
-    user.setUser_id(expenseRegisterRequest.getUser_id());
-    user.setApplication_date(expenseRegisterRequest.getApplication_date());
-    user.setCategory(expenseRegisterRequest.getCategory());
-    user.setAmount(expenseRegisterRequest.getAmount());
-    user.setRemarks(expenseRegisterRequest.getRemarks());
+    expenseRegisterEntity expenseRegister = new expenseRegisterEntity();
+    expenseRegister.setExpense_id(expenseRegisterRequest.getExpense_id());
+    expenseRegister.setUser_id(expenseRegisterRequest.getUser_id());
+    expenseRegister.setApplication_date(expenseRegisterRequest.getApplication_date());
+    expenseRegister.setCategory(expenseRegisterRequest.getCategory());
+    expenseRegister.setAmount(expenseRegisterRequest.getAmount());
+    expenseRegister.setRemarks(expenseRegisterRequest.getRemarks());
     
-    expenseRegisterRepository.save(user);
+    expenseRegisterRepository.save(expenseRegister);
   }
 
 }
