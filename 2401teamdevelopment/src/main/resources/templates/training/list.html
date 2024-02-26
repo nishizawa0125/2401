@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/head :: head_fragment(title = '科目情報一覧', scripts = ~{::script}, links = ~{::link})"></head>
+<body>
+  <div class="container">
+    <h1>筋トレメニュー</h1>
+    <div class="float-end">
+      <a th:href="@{/training/add}" class="btn btn-primary">新規登録はこちら</a>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>種目</th>
+           <th>回数</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="training : ${traininglist}" th:object="${training}" class="align-middle">
+          <td th:text="*{id}"></td>
+          <td th:text="*{training}"></td>
+          <td th:text="*{rep}"></td>
+          <td><a th:href="@{/training/{id}(id=*{id})}" class="btn btn-secondary">詳細</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
